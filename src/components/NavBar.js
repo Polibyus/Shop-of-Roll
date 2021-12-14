@@ -1,9 +1,7 @@
 import React from 'react'
-import { Navbar } from 'react-bootstrap'
-import { Container } from 'react-bootstrap'
-import { Nav } from 'react-bootstrap'
-import { NavDropdown } from 'react-bootstrap'
-import logo from '../img/logo.png';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import logo from '../img/logo.png'
+import CartIcon from './CartIcon'
 
 const NavBar = () => {
     return (
@@ -33,6 +31,7 @@ const NavBar = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
+                        <CartIcon />
                         <Nav.Link href="https://github.com/Polibyus" target="_blank">GitHub</Nav.Link>
                         <Nav.Link eventKey={2} href="https://polibyus.github.io/Roll-Adventure/" target="_blank">Un descuento?</Nav.Link>
                     </Nav>
