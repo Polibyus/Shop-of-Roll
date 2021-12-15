@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 
 const Card = (props) => {
     return (
@@ -19,6 +20,7 @@ const ItemListContainer = () => {
             <Card n='2' price='200' />
             <Card n='3' price='300' />
             <Card n='4' price='400' />
+            <ItemCount stock='5'/>
         </div>
     )
 }
