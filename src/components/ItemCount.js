@@ -12,12 +12,10 @@ const ItemCount = (props) => {
     }
 
     return (
-        <div className="column">
-            <div class="card">
+        <div className="counter">
             <button onClick={restar}>-</button>
             <h4>{venta}</h4>
             <button onClick={sumar}>+</button>
-            </div>
         </div>
     )
 }
