@@ -1,27 +1,71 @@
 import React, { useState } from "react";
 import Item from "./Item";
+import ziggs from "../img/ziggs.jpg";
+import scorpion from "../img/scorpion.jpg";
+import rick from "../img/rick.jpg";
+import npc from "../img/npc.jpg";
+import guerrero from "../img/guerrero.jpg";
 
 const ItemList = () => {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState ([]);
- 
   const getItem = new Promise((res, rej) => {
+    const USD = 200;
     const listItems = [
       {
       id: 1,
       nombre: "Figura Ziggs (LoL)",
       desc: "Pequeña pero explosiva figura del famoso campeon ziggs de League of Legends",
-      precio: 2000,
-      picURL: "",
+      precioUSD: 20,
+      precioARS: function() {
+        return (this.precioUSD * USD);
+      },
+      picURL: ziggs,
       stock: 3,
       },
       {
       id: 2,
       nombre: "Figura Scorpion (MK)",
       desc: "GET OVER HEREE!!!",
-      precio: 3000,
-      picURL: "",
+      precioUSD: 30,
+      precioARS: function() {
+        return (this.precioUSD * USD);
+      },
+      picURL: scorpion,
       stock: 1,
+      },
+      {
+      id: 3,
+      nombre: "Figura Pickle Rick (R&M)",
+      desc: "La mejor forma de evadir una sesion de terapia familiar",
+      precioUSD: 25,
+      precioARS: function() {
+        return (this.precioUSD * USD);
+      },
+      picURL: rick,
+      stock: 2,
+      },
+      {
+      id: 4,
+      nombre: "Pack 6 NPC's (D&D)",
+      desc: "Esa ciudad necesita ser llenada y no solo por valientes heroes",
+      precioUSD: 5,
+      precioARS: function() {
+        return (this.precioUSD * USD);
+      },
+      picURL: npc,
+      stock: 9,
+      },
+      {
+      id: 5,
+      nombre: "Guerrero sagrado",
+      desc: "PLA Printalot // 30mm de ancho ideal para jugar D&D",
+      precioUSD: 3,
+      precioARS: function() {
+        return (this.precioUSD * USD);
+      },
+      picURL: guerrero,
+      stock: 9,
       },
     ];
     setTimeout(() => {

@@ -6,7 +6,7 @@ const CartIcon = () => {
     return (
         <IconContext.Provider value={{ color: 'grey', size: '30px' }}>
         <div>
-            <a href="#"> <FaShoppingCart /></a>
+            <a href="https://www.w3schools.com/js/js_objects.asp" target="blank"> <FaShoppingCart /></a>
         </div>
         </IconContext.Provider>
     )
