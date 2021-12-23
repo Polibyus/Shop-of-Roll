@@ -14,7 +14,7 @@ const ItemList = () => {
     const listItems = [
       {
       id: 1,
-      nombre: "Figura Ziggs (LoL)",
+      nombre: "Figura Ziggs xl (LoL)",
       desc: "Pequeña pero explosiva figura del famoso campeon ziggs de League of Legends",
       precioUSD: 20,
       precioARS: function() {
@@ -93,13 +93,10 @@ return (
     </div>
   ) : (
   <div>
-      {item.map(item => {
-        return (
-          <div>
-          <Item item={item} />
-          </div>)
-      } 
-      )}
+    <h2>{item.length} Resultados</h2>
+    {item.map((item) => 
+      (<Item item={item} key={item.id} />) 
+    )}
   </div>)}
   </React.Fragment>);
 }

@@ -1,14 +1,14 @@
 import Button from 'react-bootstrap/Button'
 import React from 'react'
+import ItemDetailContainer from './ItemDetailContainer'
 
 const Item = ({ item }) => {
   const handleClick = () => {
-    console.log('Se hizo click');
+    <ItemDetailContainer />;
   }
   return (
-    <div>
       <div className="column">
-            <div class="card">
+            <div className="card">
               <img src={item.picURL} alt={item.nombre} />
               <h3>{item.nombre}</h3>
               <div className="d-grid gap-2">
@@ -18,7 +18,6 @@ const Item = ({ item }) => {
               </div>
             </div>
         </div>
-    </div>
   )
 }
 
