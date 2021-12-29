@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                 <img
                     alt="logo SoR"
                     src= {logo}
@@ -20,8 +20,8 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Quienes somos?</Nav.Link>
-                        <Nav.Link href="#pricing">Figuras recomendadas</Nav.Link>
+                        <Nav.Link href="/aboutus">Quienes somos?</Nav.Link>
+                        <Nav.Link href="/items">Figuras recomendadas</Nav.Link>
                         <NavDropdown title="Dungeons and Dragons" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Humanos</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Orcos</NavDropdown.Item>
