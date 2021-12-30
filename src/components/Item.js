@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const Item = ({ item }) => {
   return (
@@ -7,10 +7,11 @@ const Item = ({ item }) => {
           <div className="card">
             <img src={item.picURL} alt={item.nombre} />
             <h3>{item.nombre}</h3>
-            <Link className="d-grid gap-2 btn btn-succes" to={`/product/${item.id}`} >
+            <Button href={`${item.cat}/${item.id}`} variant='primary'>
             Ver mas
-            </Link>
-            <a className="d-grid gap-2 btn btn-succes" href='/carrito'>Añadir al carrito</a>
+            </Button>
+            <hr />
+            <Button variant='success' href='/carrito'>Añadir al carrito</Button>
           </div>
       </div>
   )
