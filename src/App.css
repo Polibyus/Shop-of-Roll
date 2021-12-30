@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 .ItemList {
   margin: 100px;
   padding-right: 15px;
@@ -36,7 +35,7 @@
 .loading {
   position: absolute;
   top: 35%;
-  left: 50%;
+  left: 45%;
   z-index: 1000;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
@@ -111,4 +110,10 @@
 
 .row {
   align-items: center;
+}
+
+.posicionar {
+  position: absolute;
+  left: 15%;
+  top: 10%;
 }
