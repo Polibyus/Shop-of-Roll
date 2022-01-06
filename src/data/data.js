@@ -25,7 +25,7 @@ export const data = [
     precioARS: calcPrecio(20),
     cat: "Recomendadas",
     picURL: ziggs,
-    stock: 3,
+    stock: 2,
     },
     {
     id: 2,
@@ -35,7 +35,7 @@ export const data = [
     precioARS: calcPrecio(20),
     cat: "Recomendadas",
     picURL: subzero,
-    stock: 1,
+    stock: 0,
     },
     {
     id: 3,
