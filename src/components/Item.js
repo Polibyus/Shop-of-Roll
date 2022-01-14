@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
+import { CartContext } from './cart-context';
 
 const Item = ({ item }) => {
+
+  const {add} = useContext(CartContext);
+
+  const clickHandler = () => {
+      add({item})
+  }
   return (
       <div className="column">
           <div className="card">
@@ -11,7 +18,7 @@ const Item = ({ item }) => {
             Ver mas
             </Button>
             <hr />
-            <Button variant='success' href='/carrito'>Añadir al carrito</Button>
+            <Button variant='success' onClick={clickHandler}>Añadir al carrito</Button>
           </div>
       </div>
   )
