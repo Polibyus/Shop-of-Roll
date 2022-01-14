@@ -6,12 +6,13 @@ const ItemCount = (props) => {
     const [mas, setMas] = useState(false);
     const [confirma, setConfirma] = useState(false);
     const stocked = (props.stock > 0) ? true : false;
+    const stock = props.stock
     useEffect(() => {
-        if (venta === props.stock) {setMas(true);}
+        if (venta === stock) {setMas(true);}
             else setMas(false);
         if (venta > 1) {setMenos(false);}
             else setMenos(true);
-    }, [venta, setMas, setMenos]);
+    }, [stock, venta]);
 
     const sumar = () => {
         if (venta < props.stock)
