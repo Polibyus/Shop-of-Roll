@@ -13,13 +13,16 @@ export function CartProvider(props) {
     const addItem = (item, cant) => {
             item.venta = cant;
             setTotal(total + cant);
-            setPrecioFinal(precioFinal + (item.precioARS * cant));
+            console.log(item);
+            setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
             setCart((oldCart) => {
                 return oldCart.concat(item)
         })
     }
     
-    const deleteItem = (item) => {
+    const deleteItem = (item, cant) => {
+        setTotal(total - cant);
+        setPrecioFinal(precioFinal - (item.precioUSD * cant));
         setCart(oldCart => {
             return oldCart.filter(i => i !== item);
         });
