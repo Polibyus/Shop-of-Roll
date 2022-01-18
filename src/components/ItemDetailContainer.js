@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
       setItem(result);
     };
     getItems();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [itemID]);
   
 return (
     <React.Fragment>

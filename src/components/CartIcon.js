@@ -1,12 +1,19 @@
 import { FaShoppingCart } from 'react-icons/fa';
-import React from 'react'
+import React, { useContext } from 'react'
 import { IconContext } from "react-icons"
+import { Link } from 'react-router-dom';
+import { CartContext } from './cart-context';
+import { Nav } from 'react-bootstrap';
 
 const CartIcon = () => {
+
+    const { ventaTotal } = useContext(CartContext);
+    
     return (
         <IconContext.Provider value={{ color: 'grey', size: '40px' }}>
-        <div className='px-4'>
-            <a href="/carrito"> <FaShoppingCart /></a>
+        <div className='counter'>
+            <Link to={"/Carrito"}><FaShoppingCart /></Link>
+            <Nav.Link as={Link} to={"/Carrito"} className='pl-2'>{ventaTotal}</Nav.Link>
         </div>
         </IconContext.Provider>
     )

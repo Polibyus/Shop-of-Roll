@@ -11,6 +11,7 @@ const ItemListContainer = () => {
   useEffect(() => {
   const loadItems = async () => {
     const promiseItem = await new Promise((res, rej) => {
+      setLoading(true);
       setTimeout(() => {
         const Items = cat ? data.filter((item) => item.cat === cat) : data;
         res(Items)
@@ -26,7 +27,7 @@ const ItemListContainer = () => {
       setItems(result);
     };
     getItems();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [cat]);
 
 return (
   <React.Fragment>

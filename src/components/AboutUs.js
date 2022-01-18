@@ -2,8 +2,8 @@ import React from 'react'
 
 const AboutUs = () => {
     return (
-        <div class="container">
-            <h3 class="subtitulo">War of roll</h3><p>Es un pequeño grupo de amigos que se reune para difrutar de innumerables aventuras en el mundo de <strong>Dungeons and Dragons</strong>. A la vez imprimimos miniaturas en una impresora 3D, para poder visualizar las acciones de nuestros heroes.</p>
+        <div className="container">
+            <h3 className="subtitulo">War of roll</h3><p>Es un pequeño grupo de amigos que se reune para difrutar de innumerables aventuras en el mundo de <strong>Dungeons and Dragons</strong>. A la vez imprimimos miniaturas en una impresora 3D, para poder visualizar las acciones de nuestros heroes.</p>
             <p>Nuestras figuras son de 30mm de ancho en adelante, tienen las medidas perfectas para jugar calabozos! Impresas en PLA de<strong> muy buena calidad (Printalot)</strong> tienen un promedio de impresión de 2 a 4 horas! Capas más dependiendo calidad y tamaño! Pintadas a mano con PRIMER, acrílico y barniz! Para que se vea igual de bien por mucho mucho tiempo</p>
             <h3>Pero <strong>¿qué es Dungeons and Dragons?</strong></h3>
             <p>D&D es un modo de contar historias en un mundo de fantasía, espada y brujería, donde la <strong>imaginación</strong> será parte importantísima para el desarrollo del juego. </p>

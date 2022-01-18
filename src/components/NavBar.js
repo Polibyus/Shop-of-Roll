@@ -2,12 +2,13 @@ import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import logo from '../img/logo.png'
 import CartIcon from './CartIcon'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-4'>
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand as={Link} to={"/"}>
                 <img
                     alt="logo SoR"
                     src= {logo}
@@ -20,15 +21,15 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/Recomendadas">Figuras recomendadas</Nav.Link>
+                        <Nav.Link as={Link} to={"/Recomendadas"} style={{ textDecoration: 'none' }}>Figuras recomendadas</Nav.Link>
                         <NavDropdown title="Dungeons and Dragons" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="/Heroes">Heroes</NavDropdown.Item>
-                            <NavDropdown.Item href="/Enemigos">Enemigos</NavDropdown.Item>
-                            <NavDropdown.Item href="/NPC">NPC's</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={"/Heroes"}>Heroes</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={"/Enemigos"}>Enemigos</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={"/NPC"}>NPC's</NavDropdown.Item>
                             <NavDropdown.Divider/>
-                            <NavDropdown.Item href="/Manuales">Guias y manuales</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={"/Manuales"}>Guias y manuales</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="/Conocenos">Quienes somos?</Nav.Link>
+                        <Nav.Link as={Link} to={"/Conocenos"}>Quienes somos?</Nav.Link>
                     </Nav>
                     <Nav>
                         <CartIcon />
