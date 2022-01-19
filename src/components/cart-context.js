@@ -11,21 +11,21 @@ export function CartProvider(props) {
     const [precioFinal, setPrecioFinal] = useState(0);
 
     const addItem = (item, cant) => {
-            item.venta = cant;
+        if (isInCart(item.item.id)) {alert("Ya se añadio al carrito")}
+        else{
+            item.item.venta = cant;
             setTotal(total + cant);
-            console.log(item);
             setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
-            setCart((oldCart) => {
-                return oldCart.concat(item)
-        })
+            setCart((oldCart) => oldCart.concat(item));
+        } 
     }
+
+    console.log(cart);
     
     const deleteItem = (item, cant) => {
         setTotal(total - cant);
-        setPrecioFinal(precioFinal - (item.precioUSD * cant));
-        setCart(oldCart => {
-            return oldCart.filter(i => i !== item);
-        });
+        setPrecioFinal(precioFinal - (item.item.precioUSD * cant));
+        setCart((oldCart) => oldCart.filter(i => i !== item));
     }
 
     const cartClean = () => {
@@ -34,13 +34,18 @@ export function CartProvider(props) {
         setPrecioFinal(0);
     }
 
+    const isInCart = (id) => {
+        return cart.some((i) => i.item.id === id)
+    }
+
     const context = {
         carrito: cart,
         ventaTotal: total,
         precioFinal: precioFinal,
         add: addItem,
         del: deleteItem,
-        clean: cartClean
+        clean: cartClean,
+        inCart: isInCart
     }
 
     return (

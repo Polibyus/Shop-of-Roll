@@ -15,7 +15,7 @@ const Item = ({ item }) => {
           <div className="card">
             <img src={item.picURL} alt={item.nombre} />
             <h3>{item.nombre}</h3>
-            <Button as={Link} to={`${item.cat}/${item.id}`}>
+            <Button as={Link} to={`/${item.cat}/${item.id}`}>
             Ver mas
             </Button>
             <hr />

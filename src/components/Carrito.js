@@ -8,7 +8,12 @@ const Carrito = () => {
 
 const { carrito, ventaTotal, precioFinal, del, clean } = useContext(CartContext);
 
+const hasItem = carrito.length > 0;
+
 return (
+    <>
+    {hasItem
+    ?
     <div className='container'>
     <h2>Carrito<br/><small>{ventaTotal} productos</small></h2>
     <div className="table-responsive shopping-cart">
@@ -30,14 +35,14 @@ return (
                         <div className="product-item">
                             <span className="product-thumb"><img src={i.item.picURL} alt={i.item.nombre} /></span>
                             <div className="product-info">
-                                <h4 className="product-title"><Link to={"/"}>{i.item.nombre}</Link></h4><span><em>Cat.:</em>{i.item.cat}</span><span>{i.item.desc}</span>
+                                <h4 className="product-title"><Link to={`/${i.item.cat}/${i.item.id}`}>{i.item.nombre}</Link></h4><span><em>Cat.:</em>{i.item.cat}</span><span>{i.item.desc}</span>
                             </div>
                         </div>
                     </td>
-                    <td className="text-center">{i.venta}</td>
+                    <td className="text-center">{i.item.venta}</td>
                     <td className="text-center text-lg text-medium">{i.item.precioUSD}</td>
-                    <td className="text-center text-lg text-medium">{(i.item.precioUSD) * (i.venta)}</td>
-                    <td className="text-center"><Button className="remove-from-cart" onClick={()=>{del(i, i.venta)}} data-toggle="tooltip" title="Eliminar item">X</Button></td>
+                    <td className="text-center text-lg text-medium">{(i.item.precioUSD) * (i.item.venta)}</td>
+                    <td className="text-center"><Button className="remove-from-cart" onClick={()=>{del(i, i.item.venta)}} data-toggle="tooltip" title="Eliminar item">X</Button></td>
                 </tr>
             )}
         </tbody>
@@ -50,12 +55,19 @@ return (
                 <button className="btn btn-outline-primary btn-sm" type="submit">Aplicar</button>
             </form>
             <div className="text-lg">Total: <span className="text-medium">${precioFinal}</span></div>
-            <div className="column"><button as={Link} to={"/"} className="btn btn-outline-secondary">Comprar más</button></div>
-            <div className="column"><button as={Link} to={"/"} className="btn btn-success">Terminar compra</button></div>
+            <div className="column"><Button as={Link} to={"/"} className="btn btn-secondary">Comprar más</Button></div>
+            <div className="column"><Button as={Link} to={"/"} className="btn btn-success">Terminar compra</Button></div>
         </div>
     </div>
     <BackButton />
     </div>
+    :
+    <>
+    <h1>Sin articulos para mostrar</h1>
+    <div className="column"><Button as={Link} to={"/"} className="btn btn-primary">Comprar</Button></div>
+    </>
+    }
+    </>
     )
 }
 
