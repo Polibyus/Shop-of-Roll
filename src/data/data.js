@@ -1,15 +1,15 @@
-import ziggs from "../img/items/ziggs.jpg";
-import subzero from "../img/items/subzero.jpg";
-import pyramid from "../img/items/pyramid.jpg";
-import npc from "../img/items/npc.jpg";
-import guerrero from "../img/items/guerrero.jpg";
-import orcos from "../img/items/orcos.jpg";
-import barbaro from "../img/items/barbaro.jpg";
-import bardo from "../img/items/bardo.jpg";
-import bruja from "../img/items/bruja.jpg";
-import golems from "../img/items/golems.jpg";
-import manual1 from "../img/items/manual1.jpg";
-import manual2 from "../img/items/manual2.png";
+// import ziggs from "../img/items/ziggs.jpg";
+// import subzero from "../img/items/subzero.jpg";
+// import pyramid from "../img/items/pyramid.jpg";
+// import npc from "../img/items/npc.jpg";
+// import guerrero from "../img/items/guerrero.jpg";
+// import orcos from "../img/items/orcos.jpg";
+// import barbaro from "../img/items/barbaro.jpg";
+// import bardo from "../img/items/bardo.jpg";
+// import bruja from "../img/items/bruja.jpg";
+// import golems from "../img/items/golems.jpg";
+// import manual1 from "../img/items/manual1.jpg";
+// import manual2 from "../img/items/manual2.png";
 
 const USD = 200;
 function calcPrecio (precio) {
@@ -24,7 +24,7 @@ export const data = [
     precioUSD: 20,
     precioARS: calcPrecio(20),
     cat: "Recomendadas",
-    picURL: ziggs,
+    picURL: "ziggs.jpg",
     stock: 2,
     },
     {
@@ -34,7 +34,7 @@ export const data = [
     precioUSD: 30,
     precioARS: calcPrecio(30),
     cat: "Recomendadas",
-    picURL: subzero,
+    picURL: "subzero.jpg",
     stock: 0,
     },
     {
@@ -44,7 +44,7 @@ export const data = [
     precioUSD: 25,
     precioARS: calcPrecio(25),
     cat: "Recomendadas",
-    picURL: pyramid,
+    picURL: 'pyramid.jpg',
     stock: 2,
     },
     {
@@ -54,7 +54,7 @@ export const data = [
     precioUSD: 5,
     precioARS: calcPrecio(5),
     cat: "NPC",
-    picURL: npc,
+    picURL: 'npc.jpg',
     stock: 9,
     },
     {
@@ -64,7 +64,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Heroes",
-    picURL: guerrero,
+    picURL: 'guerrero.jpg',
     stock: 9,
     },
     {
@@ -74,7 +74,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Enemigos",
-    picURL: orcos,
+    picURL: 'orcos.jpg',
     stock: 9,
     },
     {
@@ -84,7 +84,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Heroes",
-    picURL: barbaro,
+    picURL: 'barbaro.jpg',
     stock: 9,
     },
     {
@@ -94,7 +94,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Heroes",
-    picURL: bardo,
+    picURL: 'bardo.jpg',
     stock: 9,
     },
     {
@@ -104,7 +104,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Heroes",
-    picURL: bruja,
+    picURL: 'bruja.jpg',
     stock: 9,
     },
     {
@@ -114,7 +114,7 @@ export const data = [
     precioUSD: 3,
     precioARS: calcPrecio(3),
     cat: "Enemigos",
-    picURL: golems,
+    picURL: 'golems.jpg',
     stock: 9,
     },
     {
@@ -124,7 +124,7 @@ export const data = [
     precioUSD: 5,
     precioARS: calcPrecio(5),
     cat: "Manuales",
-    picURL: manual1,
+    picURL: 'manual1.jpg',
     stock: 9,
     },
     {
@@ -134,7 +134,7 @@ export const data = [
     precioUSD: 15,
     precioARS: calcPrecio(15),
     cat: "Manuales",
-    picURL: manual2,
+    picURL: 'manual2.jpg',
     stock: 5,
     },
 ];

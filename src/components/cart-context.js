@@ -38,6 +38,15 @@ export function CartProvider(props) {
         return cart.some((i) => i.item.id === id)
     }
 
+    const handleInput = (e) => {
+        e.preventDefault();
+        let cupon = e.target.elements.cupon.value;
+        if (cupon === "WINADVENTURE09") {
+            setPrecioFinal(precioFinal * 0.7);
+        }
+        else alert("Cupon no valido")
+    }
+
     const context = {
         carrito: cart,
         ventaTotal: total,
@@ -45,7 +54,8 @@ export function CartProvider(props) {
         add: addItem,
         del: deleteItem,
         clean: cartClean,
-        inCart: isInCart
+        inCart: isInCart,
+        handleInput: handleInput
     }
 
     return (

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Carrito = () => {
 
-const { carrito, ventaTotal, precioFinal, del, clean } = useContext(CartContext);
+const { carrito, ventaTotal, precioFinal, del, clean, handleInput } = useContext(CartContext);
 
 const hasItem = carrito.length > 0;
 
@@ -40,8 +40,8 @@ return (
                         </div>
                     </td>
                     <td className="text-center">{i.item.venta}</td>
-                    <td className="text-center text-lg text-medium">{i.item.precioUSD}</td>
-                    <td className="text-center text-lg text-medium">{(i.item.precioUSD) * (i.item.venta)}</td>
+                    <td className="text-center text-lg text-medium">${i.item.precioUSD}</td>
+                    <td className="text-center text-lg text-medium">${(i.item.precioUSD) * (i.item.venta)}</td>
                     <td className="text-center"><Button className="remove-from-cart" onClick={()=>{del(i, i.item.venta)}} data-toggle="tooltip" title="Eliminar item">X</Button></td>
                 </tr>
             )}
@@ -50,9 +50,9 @@ return (
     </div>
     <div className="shopping-cart-footer">
         <div className="row">
-            <form className="coupon-form" method="post">
-                <input className="form-control form-control-sm" type="text" placeholder="Codigo de cupon" required={true} />
-                <button className="btn btn-outline-primary btn-sm" type="submit">Aplicar</button>
+            <form className="coupon-form" method="post" onSubmit={handleInput}>
+                <input className="form-control form-control-sm" name="cupon" type="text" placeholder="Codigo de cupon" required={true} />
+                <button className="btn btn-outline-primary btn-sm">Aplicar</button>
             </form>
             <div className="text-lg">Total: <span className="text-medium">${precioFinal}</span></div>
             <div className="column"><Button as={Link} to={"/"} className="btn btn-secondary">Comprar más</Button></div>
