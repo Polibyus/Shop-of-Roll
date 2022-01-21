@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
-import { data } from '../data/data';
 import { useParams } from 'react-router-dom';
+
+import { collection, getDocs, query } from "firebase/firestore";
+import db from '../firebase/firebase';
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
@@ -9,26 +11,22 @@ const ItemDetailContainer = () => {
   const { itemID } = useParams();
 
   useEffect(() => {
-  const loadItems = async () => {
-    const response = await new Promise((res, rej) => {
-      setTimeout(() => {
-        const myItem = data.find(item => item.id.toString() === itemID);
-        res(myItem);
-      }, 2 * 1000);
-    });
-
-    return response;
-  };
-
-    const getItems = async () => {
-      setLoading(true);
-      const result = await loadItems();
+    async function fetchData(){
+    setLoading(true);
+    const itemsCollection = query(collection(db, "items"));
+    try {
+    const querySnapshot = await getDocs(itemsCollection);
+    const myItem = querySnapshot.docs.find((doc) => doc.id === itemID);
+    setItem(myItem.data());
+    }
+    catch {
+      console.log("Trono como diria el profe")
+    }
       setLoading(false);
-      setItem(result);
-    };
-    getItems();
-  }, [itemID]);
-  
+    }
+    fetchData();
+    }, [itemID]);
+
 return (
     <React.Fragment>
     {loading ? (

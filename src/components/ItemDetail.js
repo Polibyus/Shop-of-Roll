@@ -18,7 +18,7 @@ const ItemDetail = ({ item }) => {
                           <h3>{item.nombre}</h3>
                         </div>
                         <div className="col-lg-12">
-                            <p className="m-0 p-0 price-pro">${item.precioARS}</p>
+                            <p className="m-0 p-0 price-pro">${item.precioUSD}</p>
                             <hr className="p-0 m-0" />
                         </div>
                         <div className="col-lg-12 pt-2">
