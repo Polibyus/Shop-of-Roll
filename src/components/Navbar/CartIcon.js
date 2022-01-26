@@ -2,8 +2,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import React, { useContext } from 'react'
 import { IconContext } from "react-icons"
 import { Link } from 'react-router-dom';
-import { CartContext } from './cart-context';
 import { Nav } from 'react-bootstrap';
+import { CartContext } from '../context/cart-context';
 
 const CartIcon = () => {
 

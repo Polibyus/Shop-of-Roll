@@ -4,10 +4,10 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Componentes
-import NavBar from './components/NavBar';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import NavBar from './components/Navbar/NavBar';
+import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import AboutUs from './components/AboutUs';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/Items/ItemListContainer';
 import Carrito from './components/Carrito'
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path= "/" element={<ItemListContainer />} />
+        <Route path= "/Shop-of-Roll" element={<ItemListContainer />} />
         <Route path="/:cat" element={<ItemListContainer />} />
         <Route path="/:cat/:itemID" element={<ItemDetailContainer />} />
         <Route path="/Conocenos" element={<AboutUs /> } />

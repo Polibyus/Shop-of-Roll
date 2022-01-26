@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import BackButton from './BackButton'
-import { CartContext } from './cart-context'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { CartContext } from './context/cart-context';
 
 const Carrito = () => {
 

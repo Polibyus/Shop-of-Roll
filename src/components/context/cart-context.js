@@ -11,14 +11,16 @@ export function CartProvider(props) {
     const [precioFinal, setPrecioFinal] = useState(0);
 
     const addItem = (item, cant) => {
-        if (isInCart(item.item.id)) {alert("Ya se añadio al carrito")}
-        else{
-            item.item.venta = cant;
-            setTotal(total + cant);
-            setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
-            setCart((oldCart) => oldCart.concat(item));
-        } 
-    }
+        if (item.item.stock === 0) {alert("No hay stock, lo sentimos")}
+            else{
+                if (isInCart(item.item.nombre)) {alert("Ya se añadio al carrito")}
+                else{
+                    item.item.venta = cant;
+                    setTotal(total + cant);
+                    setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
+                    setCart((oldCart) => oldCart.concat(item));
+                }}
+    }   
 
     console.log(cart);
     
@@ -34,8 +36,8 @@ export function CartProvider(props) {
         setPrecioFinal(0);
     }
 
-    const isInCart = (id) => {
-        return cart.some((i) => i.item.id === id)
+    const isInCart = (nombre) => {
+        return cart.some((i) => i.item.nombre === nombre)
     }
 
     const handleInput = (e) => {

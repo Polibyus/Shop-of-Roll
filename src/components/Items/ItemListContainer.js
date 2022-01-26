@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 
 import { collection, getDocs, query, where } from "firebase/firestore";
-import db from '../firebase/firebase';
+import db from '../../firebase/firebase';
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);

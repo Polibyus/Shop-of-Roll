@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-import logo from '../img/logo.png'
+import logo from '../../img/logo.png'
 import CartIcon from './CartIcon'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-4'>
             <Container>
-                <Navbar.Brand as={Link} to={"/"}>
+                <Navbar.Brand as={Link} to={"/Shop-of-Roll"}>
                 <img
                     alt="logo SoR"
                     src= {logo}

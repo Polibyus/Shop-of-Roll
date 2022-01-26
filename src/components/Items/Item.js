@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { CartContext } from './cart-context';
+import { CartContext } from '../context/cart-context';
 
 const Item = ({ item }) => {
 
