@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/cart-context';
 
 const ItemCount = ({ item }) => {
+    // const [state, setState] = ({
+    //     venta: 1,
+    //     menos: true,
+    //     mas: false,
+    //     confirma: false
+    // })
     const [venta, setVenta] = useState(1);
     const [menos, setMenos] = useState(true);
     const [mas, setMas] = useState(false);
@@ -41,7 +47,7 @@ const ItemCount = ({ item }) => {
             <div className="col-lg-12 mt-3">
                 <div className="row">
                     <div className="col-lg-6 pb-2">
-                        <Link to={"/carrito"} className="btn btn-danger w-100">Al carrito</Link>
+                        <Link to={"/cart"} className="btn btn-danger w-100">Al carrito</Link>
                     </div>
                     <div className="col-lg-6 pb-2">
                         <Link to={"/"} className="btn btn-success w-100">Comprar más</Link>

@@ -9,6 +9,7 @@ export function CartProvider(props) {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
     const [precioFinal, setPrecioFinal] = useState(0);
+    const [couponused, setCouponused] = useState(false);
 
     const addItem = (item, cant) => {
         if (item.item.stock === 0) {alert("No hay stock, lo sentimos")}
@@ -21,8 +22,6 @@ export function CartProvider(props) {
                     setCart((oldCart) => oldCart.concat(item));
                 }}
     }   
-
-    console.log(cart);
     
     const deleteItem = (item, cant) => {
         setTotal(total - cant);
@@ -43,10 +42,11 @@ export function CartProvider(props) {
     const handleInput = (e) => {
         e.preventDefault();
         let cupon = e.target.elements.cupon.value;
-        if (cupon === "WINADVENTURE09") {
+        if (cupon === "WINADVENTURE09" && couponused === false) {
             setPrecioFinal(precioFinal * 0.7);
+            setCouponused(true);
         }
-        else alert("Cupon no valido")
+        else alert("Cupon no valido / Ya aplicado")
     }
 
     const context = {

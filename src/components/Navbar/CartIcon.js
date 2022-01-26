@@ -12,8 +12,8 @@ const CartIcon = () => {
     return (
         <IconContext.Provider value={{ color: 'grey', size: '40px' }}>
         <div className='counter'>
-            <Link to={"/Carrito"}><FaShoppingCart /></Link>
-            <Nav.Link as={Link} to={"/Carrito"} className='pl-2'>{ventaTotal}</Nav.Link>
+            <Link to={"/cart"}><FaShoppingCart /></Link>
+            <Nav.Link as={Link} to={"/cart"} className='pl-2'>{ventaTotal}</Nav.Link>
         </div>
         </IconContext.Provider>
     )

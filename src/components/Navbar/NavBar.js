@@ -29,7 +29,7 @@ const NavBar = () => {
                             <NavDropdown.Divider/>
                             <NavDropdown.Item as={Link} to={"/Manuales"}>Guias y manuales</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to={"/Conocenos"}>Quienes somos?</Nav.Link>
+                        <Nav.Link as={Link} to={"/aboutus"}>Quienes somos?</Nav.Link>
                     </Nav>
                     <Nav>
                         <CartIcon />

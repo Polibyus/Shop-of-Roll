@@ -8,11 +8,9 @@ const Carrito = () => {
 
 const { carrito, ventaTotal, precioFinal, del, clean, handleInput } = useContext(CartContext);
 
-const hasItem = carrito.length > 0;
-
 return (
     <>
-    {hasItem
+    {carrito.length > 0
     ?
     <div className='container'>
     <h2>Carrito<br/><small>{ventaTotal} productos</small></h2>
@@ -56,7 +54,7 @@ return (
             </form>
             <div className="text-lg">Total: <span className="text-medium">${precioFinal}</span></div>
             <div className="column"><Button as={Link} to={"/"} className="btn btn-secondary">Comprar más</Button></div>
-            <div className="column"><Button as={Link} to={"/"} className="btn btn-success">Terminar compra</Button></div>
+            <div className="column"><Button as={Link} to={"/finish"} className="btn btn-success">Terminar compra</Button></div>
         </div>
     </div>
     <BackButton />
