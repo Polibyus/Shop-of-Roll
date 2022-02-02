@@ -12,17 +12,18 @@ export function CartProvider(props) {
     const [couponused, setCouponused] = useState(false);
 
     const addItem = (item, cant) => {
-        if (item.item.stock === 0) {alert("No hay stock, lo sentimos")}
-            else{
-                if (isInCart(item.item.nombre)) {alert("Ya se añadio al carrito")}
-                else{
-                    item.item.venta = cant;
-                    setTotal(total + cant);
-                    setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
-                    setCart((oldCart) => oldCart.concat(item));
-                }}
-    }   
-    
+        if (item.item.stock === 0) { alert("No hay stock, lo sentimos") }
+        else {
+            if (isInCart(item.item.nombre)) { alert("Ya se añadio al carrito") }
+            else {
+                item.item.venta = cant;
+                setTotal(total + cant);
+                setPrecioFinal(precioFinal + (item.item.precioUSD * cant));
+                setCart((oldCart) => oldCart.concat(item));
+            }
+        }
+    }
+
     const deleteItem = (item, cant) => {
         setTotal(total - cant);
         setPrecioFinal(precioFinal - (item.item.precioUSD * cant));

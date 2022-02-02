@@ -13,11 +13,11 @@ const AboutUs = () => {
             <p>El personaje del jugador empezará en el nivel 1, como aprendiz de aventurero. En cada partida y cada aventura irá ganando experiencia, lo que le permitirá subir de nivel. A esto le llamamos <strong>campaña de juego sin final</strong>.</p>
             <p>En este juego <strong>no existen ganadores ni perdedores,</strong> se trata de pasar un buen rato y hacer que la diversión sea lo principal. Al ser un juego cooperativo deberemos hacer nuestra la aventura e intentar entre todos avanzar lo máximo posible en la historia.</p>
             <p>Puede darse el caso de que el personaje muera y acaben sus días de aventurero, pero lo importante habrá sido como ha luchado hasta el fin y como será recordado por el jugador y sus compañeros</p>
-        
+
             <h2>Cómo jugar a Dungeons and Dragons</h2>
-        
+
             <p>El juego de rol Dungeons & Dragons es muy sencillo de jugar y se compone de tres pasos básicos que iremos repitiendo a lo largo de toda la aventura.</p>
-        
+
             <ol>
                 <li>El DM describe la situación, dónde se encuentran los jugadores para que se hagan composición de lugar y les pregunta qué hacer.
                     <ul>

@@ -11,31 +11,31 @@ const ItemDetailContainer = () => {
   const { itemID } = useParams();
 
   useEffect(() => {
-    async function fetchData(){
-    setLoading(true);
-    const itemsCollection = query(collection(db, "items"));
-    try {
-    const querySnapshot = await getDocs(itemsCollection);
-    const myItem = querySnapshot.docs.find((doc) => doc.id === itemID);
-    setItem(myItem.data());
-    }
-    catch {
-      console.log("Trono como diria el profe")
-    }
+    async function fetchData() {
+      setLoading(true);
+      const itemsCollection = query(collection(db, "items"));
+      try {
+        const querySnapshot = await getDocs(itemsCollection);
+        const myItem = querySnapshot.docs.find((doc) => doc.id === itemID);
+        setItem(myItem.data());
+      }
+      catch {
+        console.log("Trono como diria el profe")
+      }
       setLoading(false);
     }
     fetchData();
-    }, [itemID]);
+  }, [itemID]);
 
-return (
+  return (
     <React.Fragment>
-    {loading ? (
-      <div className="loading">
-      </div>
-    ) : (
-    <>
-        <ItemDetail item={item} />
-    </>)}
+      {loading ? (
+        <div className="loading">
+        </div>
+      ) : (
+        <>
+          <ItemDetail item={item} />
+        </>)}
     </React.Fragment>);
 };
 
