@@ -16,7 +16,9 @@ const SendOrder = () => {
             },
             items: carrito,
             total: ventaTotal,
-            precioFinal: precioFinal
+            precioFinal: precioFinal,
+            suscrito: event.target.subscribe.checked,
+            estado: "Enviada"
         }
         console.log(order);
 
@@ -48,7 +50,7 @@ const SendOrder = () => {
                 <input type="checkbox" className="form-check-input" name="subscribe" defaultChecked />
                 <label className="form-check-label">Deseo suscribirme para recibir noticias.</label>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Enviar orden</button>
         </form>
     </div>
   );

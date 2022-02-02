@@ -1,8 +1,9 @@
-import React from 'react'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-import logo from '../../img/logo.png'
-import CartIcon from './CartIcon'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import logo from '../../img/logo.png';
+import CartIcon from './CartIcon';
+import { Link } from 'react-router-dom';
+import SeeOrder from '../SeeOrder';
 
 const NavBar = () => {
     return (
@@ -31,10 +32,10 @@ const NavBar = () => {
                         </NavDropdown>
                         <Nav.Link as={Link} to={"/aboutus"}>Quienes somos?</Nav.Link>
                     </Nav>
+                    <SeeOrder />
                     <Nav>
                         <CartIcon />
-                        {' '}
-                        <Nav.Link className='px-2' eventKey={2} href="https://polibyus.github.io/Roll-Adventure/" target="_blank">Un descuento?</Nav.Link>
+                        {/* <Nav.Link className='px-2' eventKey={2} href="https://polibyus.github.io/Roll-Adventure/" target="_blank">Un descuento?</Nav.Link> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
