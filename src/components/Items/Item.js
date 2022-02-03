@@ -6,11 +6,11 @@ import { CartContext } from '../context/cart-context';
 const Item = ({ item }) => {
 
   const { add } = useContext(CartContext);
-
+  // Funcion para añadir 1 item desde el listado al carrito
   const clickHandler = () => {
     add({ item }, 1)
   }
-
+  // Tarjeta de cada uno de los items presentados en el item list
   return (
     <div className="column">
       <div className="card">

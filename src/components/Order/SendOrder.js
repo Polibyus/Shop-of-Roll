@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { CartContext } from './context/cart-context';
+import { CartContext } from '../context/cart-context';
 import { Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -76,7 +76,7 @@ const SendOrder = () => {
                         Puede ver el estado de su orden en el encabezado de la pagina
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" onClick={handleClose} as={Link} to={"/Shop-of-Roll"} >
+                        <Button variant="primary" onClick={handleClose} as={Link} to={"/"} >
                             Cerrar
                         </Button>
                     </Modal.Footer>

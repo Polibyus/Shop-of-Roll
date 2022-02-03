@@ -3,34 +3,29 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/cart-context';
 
 const ItemCount = ({ item }) => {
-    // const [state, setState] = ({
-    //     venta: 1,
-    //     menos: true,
-    //     mas: false,
-    //     confirma: false
-    // })
+    // Hooks de estado para el contador y chequear stock y confirmacion de compra
     const [venta, setVenta] = useState(1);
     const [menos, setMenos] = useState(true);
     const [mas, setMas] = useState(false);
     const [confirma, setConfirma] = useState(false);
+    // Utilizar datos del prop para saber si permitir comprar o 
     const stocked = (item.stock > 0) ? true : false;
-    const stock = item.stock;
     const { add } = useContext(CartContext);
-
+    // Habilitar o no botones de suma y resta segun numero
     useEffect(() => {
-        if (venta === stock) { setMas(true); }
+        if (venta === item.stock) { setMas(true); }
         else setMas(false);
         if (venta > 1) { setMenos(false); }
         else setMenos(true);
-    }, [stock, venta]);
-
+    }, [item.stock, venta]);
+    // Contador de pedido corroborando stock
     const sumar = () => {
         if (venta < item.stock) { setVenta(venta + 1) }
     }
     const restar = () => {
         if (venta > 1) { setVenta(venta - 1) }
     }
-
+    // Añadir item y enviar datos de cantidads
     const clickHandler = () => {
         add({ item }, venta);
         setConfirma(true);

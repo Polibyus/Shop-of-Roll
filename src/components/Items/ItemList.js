@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from './Item'
-
+// Por cada objeto dentro del array items hace un llamado al componente items
 const ItemList = ({ items }) => {
     return (
         <>

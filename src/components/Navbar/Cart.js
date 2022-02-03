@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import BackButton from './BackButton'
+import BackButton from '../BackButton'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { CartContext } from './context/cart-context';
+import { CartContext } from '../context/cart-context';
 
-const Carrito = () => {
-
+const Cart = () => {
+    // Traigo informacion y funciones del context
     const { carrito, ventaTotal, precioFinal, del, clean, handleInput } = useContext(CartContext);
 
     return (
@@ -69,4 +69,4 @@ const Carrito = () => {
     )
 }
 
-export default Carrito
+export default Cart

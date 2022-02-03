@@ -2,7 +2,6 @@ import React from 'react'
 import BackButton from '../BackButton';
 import ItemCount from './ItemCount';
 
-
 const ItemDetail = ({ item }) => {
   return (
     <div className="container centered">

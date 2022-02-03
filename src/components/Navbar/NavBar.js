@@ -3,13 +3,13 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../../img/logo.png';
 import CartIcon from './CartIcon';
 import { Link } from 'react-router-dom';
-import SeeOrder from '../SeeOrder';
+import SeeOrder from '../Order/SeeOrder';
 
 const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-4'>
             <Container>
-                <Navbar.Brand as={Link} to={"/Shop-of-Roll"}>
+                <Navbar.Brand as={Link} to={"/"}>
                     <img
                         alt="logo SoR"
                         src={logo}
@@ -30,7 +30,7 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item as={Link} to={"/Manuales"}>Guias y manuales</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to={"/aboutus"}>Quienes somos?</Nav.Link>
+                        <Nav.Link as={Link} to={"/AboutUs"}>Quienes somos?</Nav.Link>
                     </Nav>
                     <SeeOrder />
                     <Nav>

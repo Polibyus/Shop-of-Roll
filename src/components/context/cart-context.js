@@ -11,6 +11,7 @@ export function CartProvider(props) {
     const [precioFinal, setPrecioFinal] = useState(0);
     const [couponused, setCouponused] = useState(false);
 
+    // Funcion para agregar item al cart, chequea que este en stock y si no manda un alert
     const addItem = (item, cant) => {
         if (item.item.stock === 0) { alert("No hay stock, lo sentimos") }
         else {
@@ -23,23 +24,23 @@ export function CartProvider(props) {
             }
         }
     }
-
+    // Eliminar item del cart
     const deleteItem = (item, cant) => {
         setTotal(total - cant);
         setPrecioFinal(precioFinal - (item.item.precioUSD * cant));
         setCart((oldCart) => oldCart.filter(i => i !== item));
     }
-
+    // Limpiar el carrito tanto mediante boton como cuando se envia el pedido
     const cartClean = () => {
         setCart([]);
         setTotal(0);
         setPrecioFinal(0);
     }
-
+    // Devuelve verdadero o falso segun el item ya se encuentre en el carrito
     const isInCart = (nombre) => {
         return cart.some((i) => i.item.nombre === nombre)
     }
-
+    // Aplicar descuento del 30% cuando se aplica cupon
     const handleInput = (e) => {
         e.preventDefault();
         let cupon = e.target.elements.cupon.value;

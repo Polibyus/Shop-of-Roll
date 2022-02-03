@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(false);
   const { itemID } = useParams();
-
+  // Promise para traer los datos de firebase segun el id del item traido por params
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
     }
     fetchData();
   }, [itemID]);
-
+  // Spinner para cargar y luego devuelve la tarjeta del item con los detalles
   return (
     <React.Fragment>
       {loading ? (

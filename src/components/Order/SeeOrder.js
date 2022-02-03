@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GiMagnifyingGlass } from 'react-icons/gi';
 import { Button, Form, FormControl, Modal } from 'react-bootstrap';
 import { collection, getDocs, query } from 'firebase/firestore';
-import db from '../firebase/firebase';
+import db from '../../firebase/firebase';
 
 const SeeOrder = () => {
     const [ID, setID] = useState();
