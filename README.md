@@ -4,12 +4,20 @@ Echo con 💚 y 🧉 por Juan Pedraza [Polibyus](https://github.com/Polibyus)
 
 ## Un poco sobre esto
 
-La idea es hacer un e-commerce, tal y como lo pide la rubrica del proyecto final y a medida ir subiendo commits sobre los diferentes temas que vamos viendo en la clase.
+Un e-commerce, tal y como lo pide la rubrica del proyecto final, con los respectivos commits a medida que se fueron viendo los temas en las clases
+
+## Link a Vercel donde se puede utilizar la app
+
+shop-of-roll.vercel.app
 
 ## Herramientas utilizadas
 
 A parte de lo enseñado en clase decidi utilizar bootstrap, tanto linkeado como instalado mediante NPM.
 Tambien utilice React-Icons para utilizar iconos y poder modificarlos a gusto.
+
+## Link a gif de la funcionalidad del sitio
+
+https://gifyu.com/image/SzLfC
 
 ## El sitio
 
